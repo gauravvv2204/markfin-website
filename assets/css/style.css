@@ -128,7 +128,6 @@ nav h3{
 }
 .card:hover{
     transform: translateY(-1rem);
-    /* transform: rotateY(180deg); */
 }
 
 .card:not(:first-child){
