@@ -50,6 +50,11 @@
             text-align: center;
             transition: 1s;
         }
+        #txtresult .close{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
     </style>
 
 </head>
@@ -59,7 +64,8 @@
         <input type="number" placeholder="Enter a number"id="v2">
         <input type="button" value="Add" class="btn" onclick="myFunction()">
         <div id="txtresult">
-            <span id="close">X</span>
+            <h1 id="txt"></h1>
+            <button id="close" style="height:20px; width:20px; color:white;" onclick="resetFunction()">&times;</button>
         </div>
     </div>
     <script>
@@ -68,19 +74,18 @@
                 var first_number = parseInt(document.getElementById("v1").value);
                 var second_number = parseInt(document.getElementById("v2").value);
                 var result = first_number + second_number;
-                
+                var txt=document.getElementById("txt")[0];
                 var disp= document.getElementById("txtresult");
-                disp.innerHTML=`<h1>${result}</h1>`;
+                txt.innerHTML=result;
                 disp.style.display= "block";
         }
-        var closebtn=document.getElementById('close');
-        closebtn.addEventListener('click', ()
-            {
-                disp.style.display="none";
-            });
-
-
-
+        function resetFunction()
+        {
+            first_number.value=0;
+            second_number.value=0;
+            txt.innerHTML="";
+            disp.style.display="none";
+        }
     </script>
 </body>
 </html>
